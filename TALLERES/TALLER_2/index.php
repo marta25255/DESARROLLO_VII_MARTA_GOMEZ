@@ -1,22 +1,29 @@
 
 <?php
 // Tu código PHP irá aquí
-$nombre = "Juan";
-$edad = 25;
+$nombre = "María";
+$edad = 30;
+$ciudad = "Madrid";
 
-// Concatenación usando el operador .
-$presentacion1 = "Hola, mi nombre es " . $nombre . " y tengo " . $edad . " años.";
+// Definición de constante
+define("PROFESION", "Ingeniera");
 
-// Concatenación dentro de comillas dobles
-$presentacion2 = "Hola, mi nombre es $nombre y tengo $edad años.";
+// Creación de mensaje usando diferentes métodos de concatenación e impresión
+$mensaje1 = "Hola, mi nombre es " . $nombre . " y tengo " . $edad . " años.";
+$mensaje2 = "Vivo en $ciudad y soy " . PROFESION . ".";
 
-// Definición de una constante
-define("SALUDO", "¡Bienvenido!");
+echo $mensaje1 . "<br>";
+print($mensaje2 . "<br>");
 
-// Concatenación con constante
-$mensaje = SALUDO . " " . $nombre;
+printf("En resumen: %s, %d años, %s, %s<br>", $nombre, $edad, $ciudad, PROFESION);
 
-echo $presentacion1 . "<br>";
-echo $presentacion2 . "<br>";
-echo $mensaje . "<br>";
+echo "<br>Información de debugging:<br>";
+var_dump($nombre);
+echo "<br>";
+var_dump($edad);
+echo "<br>";
+var_dump($ciudad);
+echo "<br>";
+var_dump(PROFESION);
+echo "<br>";
 ?>
