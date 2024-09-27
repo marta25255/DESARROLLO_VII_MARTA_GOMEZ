@@ -1,7 +1,4 @@
 <?php
-interface prestable {
-    public function obtenerDetallesPrestamo(): string;
-}
 
 class RecursoBiblioteca {
     public $id;
@@ -122,7 +119,7 @@ class GestorBiblioteca {
 
             switch ($recursoData['tipo']) {
                 case 'disponible':
-                    $nuevaTarea = new  RecursoBiblioteca(
+                    $nuevolibro = new  RecursoBiblioteca(
                         $recursoData['ID'],
                         $recursoData['autor'],
                         $recursoData['anioPublicacion'],
@@ -133,7 +130,7 @@ class GestorBiblioteca {
                     );
                     break;
                 case 'prestado':
-                    $nuevaTarea = new  RecursoBiblioteca(
+                    $nuevolibro = new  RecursoBiblioteca(
                         $recursoData['ID'],
                         $recursoData['autor'],
                         $recursoData['anioPublicacion'],
@@ -144,7 +141,7 @@ class GestorBiblioteca {
                     );
                     break;
                 case 'en_reparacion':
-                    $nuevaTarea = new  RecursoBiblioteca(
+                    $nuevolibro = new  RecursoBiblioteca(
                         $recursoData['ID'],
                         $recursoData['autor'],
                         $recursoData['anioPublicacion'],
@@ -221,16 +218,15 @@ class GestorBiblioteca {
     public function listarTareas($filtroEstado = '', $CampoOrden = 'id' , $direccionOrden = 'ASC') {
         foreach ($this->recursos as $recurso) {
             if ($filtroEstado === '' || $recurso->estado === $filtroEstado) {
-                echo $recurso->obtenerNombre() . ": " . $recurso->obtenerDescripcion() . " - " . $recurso->obtenerDetallesEspecificos() . PHP_EOL;
+                echo $recurso;
             }
         }
     }
 
-    
+
 
    
-    
-
+   
 
 
 

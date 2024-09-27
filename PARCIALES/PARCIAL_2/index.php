@@ -31,11 +31,10 @@ switch ($action) {
             $tipo = $_GET['tipo'];
 
             // Implementar la lógica para agregar el recurso al gestor
+
             
-
-
         }
-        break;
+            
 
     case 'edit':
         if (isset($_GET['id']) && isset($_GET['titulo']) && isset($_GET['autor']) && isset($_GET['anioPublicacion']) && isset($_GET['estado']) && isset($_GET['fechaAdquisicion']) && isset($_GET['tipo'])) {
