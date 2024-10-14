@@ -78,6 +78,41 @@ function validarFechaNacimiento($fechaNacimiento) {
     }
     
     return false;
+
 }
+
+// validacion a foto de perfil - nombre unico 
+
+function procesarFotoPerfil($archivo) {
+    // Directorio donde se guardan las fotos de perfil
+    $directorioDestino = 'uploads/perfiles/';
+    
+    // Obtener la extensión del archivo
+    $extension = pathinfo($archivo['name'], PATHINFO_EXTENSION);
+    
+    // Generar un nombre único para la imagen
+    $nombreArchivoUnico = uniqid('perfil_', true) . '.' . $extension;
+    
+    // Comprobar si el archivo ya existe (aunque esto es improbable usando uniqid)
+    $rutaCompleta = $directorioDestino . $nombreArchivoUnico;
+    while (file_exists($rutaCompleta)) {
+        // Si el archivo existe, generar un nuevo nombre
+        $nombreArchivoUnico = uniqid('perfil_', true) . '.' . $extension;
+        $rutaCompleta = $directorioDestino . $nombreArchivoUnico;
+    }
+    
+    // Mover el archivo al directorio destino
+    if (move_uploaded_file($archivo['tmp_name'], $rutaCompleta)) {
+        return $nombreArchivoUnico;
+    } else {
+        return false; // Hubo un error subiendo el archivo
+    }
+}
+
+// Función que devuelve el valor previamente ingresado en el formulario
+function mantenerValor($campo) {
+    return isset($_POST[$campo]) ? htmlspecialchars($_POST[$campo]) : '';
+}
+
 
 ?>
