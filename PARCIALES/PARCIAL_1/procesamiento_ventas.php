@@ -7,7 +7,7 @@ function calcular_total_ventas($datos_ventas){
     foreach ($datos_ventas as $producto) {
         $totalventas += $producto['precio'];
     }
-    echo "</br>Total de ventas por sector: $" . number_format($totalventas, 2) . "</br>";
+    echo "</br>Total de ventas por sector: " . number_format($totalventas, 2) . "</br>";
 }
 
 function producto_mas_vendido($datos_ventas){  

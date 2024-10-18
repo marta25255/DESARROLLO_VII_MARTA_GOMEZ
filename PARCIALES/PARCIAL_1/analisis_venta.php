@@ -1,6 +1,5 @@
 <?php
 
-include "procesamiento_ventas.php";
 
 $datos_ventas = [
     "producto1" => [
@@ -45,9 +44,9 @@ ventas_por_region($datos_ventas);
 <html lang="es">
 
     <table>
-        <td><?php echo $venta -> calcular_total_ventas($datos_ventas)?></td>
-        <td><?php echo $venta -> producto_mas_vendido($datos_ventas)?></td>
-        <td><?php echo $venta -> ventas_por_region($datos_ventas)?></td>
+        <td><?php echo calcular_total_ventas($datos_ventas)?></td>
+        <td><?php echo producto_mas_vendido($datos_ventas)?></td>
+        <td><?php echo ventas_por_region($datos_ventas)?></td>
     </table>
 
 </html>
