@@ -1,4 +1,113 @@
 <?php
+
+        /*clcular descuento 
+
+
+        /*
+
+        function contar_palabras($cadena){
+    count($cadena);
+}
+
+function contar_vocales($cadena){
+    $vocales = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']; 
+    $contador = 0; 
+    for ($i = 0; $i < strlen($cadena); $i++) {
+        if (in_array($cadena[$i], $vocales)) {
+            $contador++;
+        }
+    } 
+    return $contador; 
+}
+
+
+function invertir_palabra($cadena){
+    $palabras = explode(' ', $cadena);
+    $palabras_invertidas = array_reverse($palabras);
+    $cadena_invertida = implode(' ', $palabras_invertidas);
+    echo $cadena_invertida;
+}
+
+        ---------------------------------
+
+        $precio = array ("camisa" => 50, "pantalon" => 70,"zapato" => 80,"calcetines" => 10,"gorra" => 25);
+    $carrito = array ("camisa" => 2, "pantalon" => 1,"zapato" => 1,"calcetines" => 3,"gorra" => 0);
+
+
+    foreach ($carrito as $producto => $cantidad) {
+        if ($cantidad > 0) {
+            $subtotal = $precio[$producto] * $cantidad;
+            echo "Producto: $producto, Cantidad: $cantidad, Subtotal: $$subtotal\n";
+            $totl += $subtotal;
+        }
+    }
+
+
+        echo "El descuento sería de: " . calcular_descuento($totl) ."";
+        echo "El impuesto sería de: " . aplicar_impuesto($totl) ."";
+        echo "El total sería de: " . calcular_total($totl) ."";
+
+
+        -------------------------------------------------------------------------
+
+$frases = ["hola como estas" , "Buenos dias" , "Buenas tardes"];
+
+for ($i = 0; $i < count($frases); $i++) {
+    echo "Frase: " . $frases[$i] . "\n";
+    echo "La cantidad de palabras son: " . contar_palabras($frases[$i]) . "\n";
+    echo "La cantidad de vocales son: " . contar_vocales($frases[$i]) . "\n";
+    echo "La inversión es: " . invertir_palabra($frases[$i]) . "\n";
+}
+
+
+
+        function calcular_descuento($totalcompra){
+            if ($totalcompra < 100) {
+    
+                return $totalcompra;
+            } elseif ($totalcompra >= 100 && $totalcompra <= 500) {
+                
+                $descuento = $totalcompra * 0.05;
+            } elseif ($totalcompra > 500 && $totalcompra <= 1000) {
+                
+                $descuento = $totalcompra * 0.10;
+            } else {
+                
+                $descuento = $totalcompra * 0.15;
+            }
+        
+            $totalcompra2 = $totalcompra - $descuento;
+            echo "Descuento: " . $descuento . "\n";
+            echo "Total con descuento: " . $totalcompra2 . "\n";
+            
+            return $totalcompra2; 
+        }
+        
+
+        function aplicar_impuesto($totalcompra2){
+            $impuesto = 0.07; // 7% de impuesto
+            $monto_impuesto = $totalcompra2 * $impuesto;
+            
+            echo "Monto del impuesto: " . $monto_impuesto . "\n";
+            
+            return $monto_impuesto; // Retorna el monto del impuesto
+        }
+        
+
+        function calcular_total( $totalcompra2){
+            $impuesto = aplicar_impuesto($totalcompra2); // Calcula el impuesto
+            $total_final = $totalcompra2 + $impuesto; // Suma el impuesto al total con descuento
+            
+            echo "Total final (con impuesto): " . $total_final . "\n";
+            
+            return $total_final;
+        }
+        
+    
+            
+
+*/
+
 // 1. FUNCIONES DE CADENAS:
 
 // strlen() - Devuelve la longitud de una cadena
@@ -49,6 +158,8 @@
 
 // in_array() - Comprueba si un valor existe en un array
 // Ejemplo: in_array(3, [1, 2, 3, 4]) devuelve true
+ 
+// array_key_fist() - // Devuelve la clave (valor) con mayor frecuencia
 
 // array_slice() - Extrae una porción de un array
 // Ejemplo: array_slice([1, 2, 3, 4], 1, 2) devuelve [2, 3]
