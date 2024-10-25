@@ -2,7 +2,7 @@
 
 
 /*
-git add PARCIALES/PARCIAL_3/ index.php PARCIALES/PARCIAL_3/ recursobiblioteca.php
+git add PARCIALES/PARCIAL_3/ index.php 
 git commit -m "Parcial3"
 git push origin main
 
