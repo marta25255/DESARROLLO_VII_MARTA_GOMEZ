@@ -1,20 +1,11 @@
 <?php
-require_once "funciones.php"
-requireLogin();
+require_once 'functions.php';
+requireLogin(); // Ensure the user is logged in
 
 $error = '';
 $success = '';
 
-
-//colocar condicionales de request method
-// colocar el nombre y la fecha de tiempo limite 
-if ($_SERVER["REQUEST_METHOD"] == "POST"){
-    $title = trim($_POST["title"]?? "");
-    $due_date = $_POST["due_date"]?? "";
-}
-
-// validar que los campos esten llenos 
-
+// Handle new task submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = trim($_POST['title'] ?? '');
     $due_date = $_POST['due_date'] ?? '';
@@ -80,5 +71,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
 </body>
 </html>
-
-
